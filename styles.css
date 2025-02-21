@@ -1,0 +1,431 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #ddd;
+    text-align: center;
+}
+
+/* Хедер */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #00aaff;
+}
+
+header h1 {
+    color: #00aaff;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #00aaff;
+}
+
+/* Главный контент */
+main {
+    padding: 50px 20px;
+}
+
+.intro {
+    padding: 50px;
+    background: linear-gradient(to bottom, rgba(0, 170, 255, 0.2), transparent);
+    border-radius: 10px;
+}
+
+.intro h2 {
+    font-size: 2em;
+    color: #00aaff;
+}
+
+.intro p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Раздел с особенностями */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+}
+
+.feature-box h3 {
+    color: #00aaff;
+}
+
+.feature-box:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Футер */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    margin-top: 50px;
+    border-top: 3px solid #00aaff;
+}
+
+footer p {
+    color: #aaa;
+}
+
+/* Первый блок с новым фоном (Interactive Story) */
+.feature-box:first-child {
+    background: url('https://www.slantmagazine.com/wp-content/uploads/2018/05/detroitbecomehuman.jpg') no-repeat center/cover;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Второй блок (Stunning Visuals) - остается без изменений */
+.feature-box:nth-child(2) {
+    background: url('https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1222140/ss_d843de340cec5939af9cff19c467371f26a9b4b1.1920x1080.jpg?t=1667468479') no-repeat center/cover;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Третий блок с новым фоном (Deep Characters) */
+.feature-box:nth-child(3) {
+    background: url('https://static1.thegamerimages.com/wordpress/wp-content/uploads/2021/03/detroit-become-human-main-characters.png') no-repeat center/cover;
+    position: relative;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Затемнение для контраста текста */
+.feature-box:first-child::before,
+.feature-box:nth-child(2)::before,
+.feature-box:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение */
+    border-radius: 10px;
+}
+
+/* Текст поверх фоновых изображений */
+.feature-box h3,
+.feature-box p {
+    position: relative;
+    z-index: 2;
+}
+
+/* Удаление фонового изображения из .intro */
+.intro {
+    padding: 50px;
+    background: none;
+    color: #ddd;
+    text-align: center;
+}
+
+/* Стили для Characters */
+#characters {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    color: white;
+    text-align: center;
+}
+
+.character {
+    position: relative;
+    padding: 50px;
+    margin: 30px auto;
+    width: 80%;
+    border-radius: 15px;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    font-size: 1.2em;
+}
+
+.connor::before {
+    background-image: url('https://miro.medium.com/v2/resize:fit:1200/1*VV5_N4Geb0V1478sUC0nlw.jpeg');
+}
+
+.kara::before {
+    background-image: url('https://tesall.club/uploads/gallery/category_93/med_gallery_113503_93_170110.jpg');
+}
+
+.markus {
+    background-image: url('https://bjdclub.com/extimages/45/c2/45c22b72be2ec2cc9a050a04a2aca24d.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Устанавливаем высоту */
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.connor, .kara, .markus {
+    z-index: 1;  
+}
+
+.connor, .kara, .markus {
+    background-size: cover;
+    background-position: center;
+    height: 400px;  
+    min-height: 400px;  
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    width: 100%;  
+}
+
+/* Фоновые изображения с размытием */
+.character::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Стили для Gallery */
+#gallery {
+    padding: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для Contact */
+#contact {
+    padding: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    background: #111;
+    color: #fff;
+}
+
+button {
+    background: #00aaff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0088cc;
+}
+
+/* 1. Белая обводка + неоновое свечение в header */
+header h1 {
+    font-size: 36px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow:  
+        -2px -2px 0 #fff,  
+        2px -2px 0 #fff,  
+        -2px 2px 0 #fff,  
+        2px 2px 0 #fff,  
+        0 0 10px #00aaff, /* Неоновое свечение */
+        0 0 20px #00aaff;
+}
+
+/* Стили для Characters */
+#characters {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    color: #00aaff;
+    text-align: center;
+}
+
+.character-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.character {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.character-name {
+    color: #fff;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* добавим неоновое свечение */
+    border: 2px solid #fff; /* белая обводка */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Стили для раздела "Buy the Game" */
+#buy-game {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    color: #00aaff;
+    text-align: center;
+}
+
+#buy-game h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#buy-game p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.buy-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buy-button {
+    background: #00aaff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.buy-button:hover {
+    background: #0088cc;
+}
+
+/* Стили для раздела "Buy the Game" */
+#buy-game {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px;
+    color: #00aaff;
+    text-align: center;
+}
+
+#buy-game h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#buy-game p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.buy-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buy-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #00aaff;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.buy-button i {
+    font-size: 1.5em; /* Размер иконки */
+}
+
+.buy-button:hover {
+    background: #0088cc;
+}
+
+.buy-button i {
+    font-size: 1.5em; /* Размер иконки */
+}
+
+
